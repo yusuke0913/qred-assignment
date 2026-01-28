@@ -37,11 +37,11 @@ curl http://localhost:3000/companies/019bffec-3afb-7b63-8461-a89366547b11/dashbo
 
 Using DynamoDB Single Table Design to minimize read operations and optimize for the dashboard use case.
 
-| Entity | PK | SK | GSI1 (DueDateIndex) |
-|--------|----|----|---------------------|
-| Company | `COMPANY#<id>` | `METADATA` | - |
-| Transaction | `COMPANY#<id>` | `TX#<date>#<txId>` | - |
-| Invoice | `COMPANY#<id>` | `INVOICE#<invoiceId>` | `dueDate` |
+| Entity | PK | SK                              | GSI1 (DueDateIndex) |
+|--------|----|---------------------------------|---------------------|
+| Company | `COMPANY#<id>` | `METADATA`                      | - |
+| Transaction | `COMPANY#<id>` | `TX#<date>#<txId>`              | - |
+| Invoice | `COMPANY#<id>` | `INVOICE#<dueDate>#<invoiceId>` | `dueDate` |
 
 ### Access Patterns
 
@@ -70,7 +70,17 @@ GET /companies/{companyId}/dashboard
     "currency": "SEK"
   },
   "recentTransactions": {
-    "items": [...],
+    "items": [
+       {
+          "amount": 1159,
+          "SK": "TX#2026-01-27T16:00:00Z#0193a100",
+          "currency": "SEK",
+          "PK": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11",
+          "transactionDate": "2026-01-27T16:00:00Z",
+          "category": "Finance",
+          "merchantName": "Starbucks"
+       }
+    ],
     "totalCount": 57,
     "additionalItemsCount": 52
   },
@@ -108,7 +118,7 @@ src/handlers/dashboard/
 
 - **Single API endpoint**: Consolidated response to minimize frontend API calls and reduce latency
 - **Repository pattern**: Separation of data access logic for testability
-- **SK design for transactions**: `TX#<date>#<id>` enables efficient reverse chronological queries
+- **SK design for transactions**: `TX#<date>#<id>` and invoices**: `INVOICE#<dueDate>#<id>` enables efficient reverse chronological queries
 
 ## Testing
 
