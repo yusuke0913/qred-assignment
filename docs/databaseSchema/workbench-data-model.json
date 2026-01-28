@@ -1,0 +1,4651 @@
+{
+  "ModelName": "qred assignment",
+  "ModelMetadata": {
+    "Author": "Yusuke",
+    "DateCreated": "Jan 27, 2026, 11:11 AM",
+    "DateLastModified": "Jan 27, 2026, 04:28 PM",
+    "Description": "",
+    "AWSService": "Amazon DynamoDB",
+    "Version": "3.0"
+  },
+  "DataModel": [
+    {
+      "TableName": "QredMain",
+      "KeyAttributes": {
+        "PartitionKey": {
+          "AttributeName": "PK",
+          "AttributeType": "S"
+        },
+        "SortKey": {
+          "AttributeName": "SK",
+          "AttributeType": "S"
+        }
+      },
+      "NonKeyAttributes": [
+        {
+          "AttributeName": "companyName",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "creditLimit",
+          "AttributeType": "N"
+        },
+        {
+          "AttributeName": "remainingSpend",
+          "AttributeType": "N"
+        },
+        {
+          "AttributeName": "currency",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "status",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "merchantName",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "amount",
+          "AttributeType": "N"
+        },
+        {
+          "AttributeName": "transactionDate",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "dueDate",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "amountDue",
+          "AttributeType": "N"
+        },
+        {
+          "AttributeName": "isPaid",
+          "AttributeType": "BOOL"
+        },
+        {
+          "AttributeName": "category",
+          "AttributeType": "S"
+        }
+      ],
+      "TableFacets": [
+        {
+          "FacetName": "Company",
+          "KeyAttributeAlias": {
+            "PartitionKeyAlias": "COMPANY#",
+            "SortKeyAlias": "METADATA"
+          },
+          "TableData": [
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "METADATA"
+              },
+              "companyName": {
+                "S": "Company AB"
+              },
+              "creditLimit": {
+                "N": "10000"
+              },
+              "remainingSpend": {
+                "N": "5400"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "status": {
+                "S": "Active"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019c1234-5678-90ab-cdef-123456789012"
+              },
+              "SK": {
+                "S": "METADATA"
+              },
+              "companyName": {
+                "S": "Tech Innovators Oy"
+              },
+              "creditLimit": {
+                "N": "25000"
+              },
+              "remainingSpend": {
+                "N": "12000"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "status": {
+                "S": "Active"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019c2345-6789-0abc-def1-234567890123"
+              },
+              "SK": {
+                "S": "METADATA"
+              },
+              "companyName": {
+                "S": "Stockholm Solutions"
+              },
+              "creditLimit": {
+                "N": "50000"
+              },
+              "remainingSpend": {
+                "N": "48500"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "status": {
+                "S": "Active"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019c3456-7890-abcd-ef12-345678901234"
+              },
+              "SK": {
+                "S": "METADATA"
+              },
+              "companyName": {
+                "S": "Nordic Logistics"
+              },
+              "creditLimit": {
+                "N": "15000"
+              },
+              "remainingSpend": {
+                "N": "2100"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "status": {
+                "S": "Suspended"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019c4567-890a-bcde-f123-456789012345"
+              },
+              "SK": {
+                "S": "METADATA"
+              },
+              "companyName": {
+                "S": "Gothenburg Design"
+              },
+              "creditLimit": {
+                "N": "8000"
+              },
+              "remainingSpend": {
+                "N": "7500"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "status": {
+                "S": "Active"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019c5678-90ab-cdef-1234-567890123456"
+              },
+              "SK": {
+                "S": "METADATA"
+              },
+              "companyName": {
+                "S": "Malmo Retail Co"
+              },
+              "creditLimit": {
+                "N": "12000"
+              },
+              "remainingSpend": {
+                "N": "4300"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "status": {
+                "S": "Active"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019c6789-0abc-def1-2345-678901234567"
+              },
+              "SK": {
+                "S": "METADATA"
+              },
+              "companyName": {
+                "S": "Uppsala BioTech"
+              },
+              "creditLimit": {
+                "N": "100000"
+              },
+              "remainingSpend": {
+                "N": "95000"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "status": {
+                "S": "Active"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019c7890-abcd-ef12-3456-789012345678"
+              },
+              "SK": {
+                "S": "METADATA"
+              },
+              "companyName": {
+                "S": "Viking Energy"
+              },
+              "creditLimit": {
+                "N": "30000"
+              },
+              "remainingSpend": {
+                "N": "15000"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "status": {
+                "S": "Active"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019c890a-bcde-f123-4567-890123456789"
+              },
+              "SK": {
+                "S": "METADATA"
+              },
+              "companyName": {
+                "S": "Fika Coffee Group"
+              },
+              "creditLimit": {
+                "N": "5000"
+              },
+              "remainingSpend": {
+                "N": "1200"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "status": {
+                "S": "Active"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019c901b-cdef-1234-5678-901234567890"
+              },
+              "SK": {
+                "S": "METADATA"
+              },
+              "companyName": {
+                "S": "Lund Systems"
+              },
+              "creditLimit": {
+                "N": "20000"
+              },
+              "remainingSpend": {
+                "N": "18900"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "status": {
+                "S": "Active"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019ca12c-def1-2345-6789-012345678901"
+              },
+              "SK": {
+                "S": "METADATA"
+              },
+              "companyName": {
+                "S": "Kiruna Mining"
+              },
+              "creditLimit": {
+                "N": "75000"
+              },
+              "remainingSpend": {
+                "N": "32000"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "status": {
+                "S": "Active"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019cb23d-ef12-3456-7890-123456789012"
+              },
+              "SK": {
+                "S": "METADATA"
+              },
+              "companyName": {
+                "S": "Skane Agri"
+              },
+              "creditLimit": {
+                "N": "18000"
+              },
+              "remainingSpend": {
+                "N": "17500"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "status": {
+                "S": "Active"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019cc34e-f123-4567-8901-234567890123"
+              },
+              "SK": {
+                "S": "METADATA"
+              },
+              "companyName": {
+                "S": "Orebro Manufacturing"
+              },
+              "creditLimit": {
+                "N": "40000"
+              },
+              "remainingSpend": {
+                "N": "10500"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "status": {
+                "S": "Suspended"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019cd45f-1234-5678-9012-345678901234"
+              },
+              "SK": {
+                "S": "METADATA"
+              },
+              "companyName": {
+                "S": "Visby Tourism Ltd"
+              },
+              "creditLimit": {
+                "N": "10000"
+              },
+              "remainingSpend": {
+                "N": "8800"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "status": {
+                "S": "Active"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019ce560-2345-6789-0abc-def123456789"
+              },
+              "SK": {
+                "S": "METADATA"
+              },
+              "companyName": {
+                "S": "Linkoping Tech"
+              },
+              "creditLimit": {
+                "N": "22000"
+              },
+              "remainingSpend": {
+                "N": "21500"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "status": {
+                "S": "Active"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019cf671-3456-7890-abcd-ef1234567890"
+              },
+              "SK": {
+                "S": "METADATA"
+              },
+              "companyName": {
+                "S": "Arctic Exports"
+              },
+              "creditLimit": {
+                "N": "55000"
+              },
+              "remainingSpend": {
+                "N": "44000"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "status": {
+                "S": "Active"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019d0782-4567-890a-bcde-f12345678901"
+              },
+              "SK": {
+                "S": "METADATA"
+              },
+              "companyName": {
+                "S": "Baltic Marine"
+              },
+              "creditLimit": {
+                "N": "35000"
+              },
+              "remainingSpend": {
+                "N": "3000"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "status": {
+                "S": "Active"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019d1893-5678-90ab-cdef-012345678902"
+              },
+              "SK": {
+                "S": "METADATA"
+              },
+              "companyName": {
+                "S": "Solna Software"
+              },
+              "creditLimit": {
+                "N": "12500"
+              },
+              "remainingSpend": {
+                "N": "11000"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "status": {
+                "S": "Active"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019d2904-6789-0abc-def1-123456789012"
+              },
+              "SK": {
+                "S": "METADATA"
+              },
+              "companyName": {
+                "S": "Umea Forest Products"
+              },
+              "creditLimit": {
+                "N": "60000"
+              },
+              "remainingSpend": {
+                "N": "58000"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "status": {
+                "S": "Active"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019d3015-7890-abcd-ef12-234567890123"
+              },
+              "SK": {
+                "S": "METADATA"
+              },
+              "companyName": {
+                "S": "Vasteras Robotics"
+              },
+              "creditLimit": {
+                "N": "45000"
+              },
+              "remainingSpend": {
+                "N": "42000"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "status": {
+                "S": "Active"
+              }
+            }
+          ],
+          "NonKeyAttributes": [
+            "companyName",
+            "creditLimit",
+            "remainingSpend",
+            "currency",
+            "status"
+          ],
+          "DataAccess": {
+            "MySql": {}
+          }
+        },
+        {
+          "FacetName": "Transaction",
+          "KeyAttributeAlias": {
+            "PartitionKeyAlias": "COMPANY#",
+            "SortKeyAlias": "TX#"
+          },
+          "TableData": [
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T16:00:00Z#0193a100"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Starbucks"
+              },
+              "amount": {
+                "N": "1159"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T16:00:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T15:50:00Z#0193a101"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Amazon.se"
+              },
+              "amount": {
+                "N": "1706"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T15:50:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T15:40:00Z#0193a102"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Uber"
+              },
+              "amount": {
+                "N": "1121"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T15:40:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T15:30:00Z#0193a103"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "ICA"
+              },
+              "amount": {
+                "N": "1077"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T15:30:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T15:20:00Z#0193a104"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Shell"
+              },
+              "amount": {
+                "N": "1687"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T15:20:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T15:10:00Z#0193a105"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "H&M"
+              },
+              "amount": {
+                "N": "862"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T15:10:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T15:00:00Z#0193a106"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Telia"
+              },
+              "amount": {
+                "N": "143"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T15:00:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T14:50:00Z#0193a107"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Spotify"
+              },
+              "amount": {
+                "N": "649"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T14:50:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T14:40:00Z#0193a108"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Starbucks"
+              },
+              "amount": {
+                "N": "1190"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T14:40:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T14:30:00Z#0193a109"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Amazon.se"
+              },
+              "amount": {
+                "N": "1596"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T14:30:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T14:20:00Z#0193a110"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Uber"
+              },
+              "amount": {
+                "N": "1353"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T14:20:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T14:10:00Z#0193a111"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "ICA"
+              },
+              "amount": {
+                "N": "943"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T14:10:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T14:00:00Z#0193a112"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Shell"
+              },
+              "amount": {
+                "N": "1787"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T14:00:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T13:50:00Z#0193a113"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "H&M"
+              },
+              "amount": {
+                "N": "784"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T13:50:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T13:40:00Z#0193a114"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Telia"
+              },
+              "amount": {
+                "N": "651"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T13:40:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T13:30:00Z#0193a115"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Spotify"
+              },
+              "amount": {
+                "N": "86"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T13:30:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T13:20:00Z#0193a116"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Starbucks"
+              },
+              "amount": {
+                "N": "427"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T13:20:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T13:10:00Z#0193a117"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Amazon.se"
+              },
+              "amount": {
+                "N": "983"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T13:10:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T13:00:00Z#0193a118"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Uber"
+              },
+              "amount": {
+                "N": "1020"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T13:00:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T12:50:00Z#0193a119"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "ICA"
+              },
+              "amount": {
+                "N": "1230"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T12:50:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T12:40:00Z#0193a120"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Shell"
+              },
+              "amount": {
+                "N": "1855"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T12:40:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T12:30:00Z#0193a121"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "H&M"
+              },
+              "amount": {
+                "N": "548"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T12:30:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T12:20:00Z#0193a122"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Telia"
+              },
+              "amount": {
+                "N": "115"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T12:20:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T12:10:00Z#0193a123"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Spotify"
+              },
+              "amount": {
+                "N": "1133"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T12:10:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T12:00:00Z#0193a124"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Starbucks"
+              },
+              "amount": {
+                "N": "379"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T12:00:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T11:50:00Z#0193a125"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Amazon.se"
+              },
+              "amount": {
+                "N": "2047"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T11:50:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T11:40:00Z#0193a126"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Uber"
+              },
+              "amount": {
+                "N": "384"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T11:40:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T11:30:00Z#0193a127"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "ICA"
+              },
+              "amount": {
+                "N": "1355"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T11:30:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T11:20:00Z#0193a128"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Shell"
+              },
+              "amount": {
+                "N": "923"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T11:20:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T11:10:00Z#0193a129"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "H&M"
+              },
+              "amount": {
+                "N": "588"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T11:10:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T11:00:00Z#0193a130"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Telia"
+              },
+              "amount": {
+                "N": "1469"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T11:00:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T10:50:00Z#0193a131"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Spotify"
+              },
+              "amount": {
+                "N": "642"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T10:50:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T10:40:00Z#0193a132"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Starbucks"
+              },
+              "amount": {
+                "N": "1101"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T10:40:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T10:30:00Z#0193a133"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Amazon.se"
+              },
+              "amount": {
+                "N": "107"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T10:30:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T10:20:00Z#0193a134"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Uber"
+              },
+              "amount": {
+                "N": "1512"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T10:20:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T10:10:00Z#0193a135"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "ICA"
+              },
+              "amount": {
+                "N": "1903"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T10:10:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T10:00:00Z#0193a136"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Shell"
+              },
+              "amount": {
+                "N": "874"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T10:00:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T09:50:00Z#0193a137"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "H&M"
+              },
+              "amount": {
+                "N": "291"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T09:50:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T09:40:00Z#0193a138"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Telia"
+              },
+              "amount": {
+                "N": "1700"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T09:40:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T09:30:00Z#0193a139"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Spotify"
+              },
+              "amount": {
+                "N": "1238"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T09:30:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T09:20:00Z#0193a140"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Starbucks"
+              },
+              "amount": {
+                "N": "151"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T09:20:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T09:10:00Z#0193a141"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Amazon.se"
+              },
+              "amount": {
+                "N": "729"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T09:10:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T09:00:00Z#0193a142"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Uber"
+              },
+              "amount": {
+                "N": "470"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T09:00:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T08:50:00Z#0193a143"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "ICA"
+              },
+              "amount": {
+                "N": "1188"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T08:50:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T08:40:00Z#0193a144"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Shell"
+              },
+              "amount": {
+                "N": "1619"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T08:40:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T08:30:00Z#0193a145"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "H&M"
+              },
+              "amount": {
+                "N": "908"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T08:30:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T08:20:00Z#0193a146"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Telia"
+              },
+              "amount": {
+                "N": "316"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T08:20:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T08:10:00Z#0193a147"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Spotify"
+              },
+              "amount": {
+                "N": "1504"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T08:10:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T08:00:00Z#0193a148"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Starbucks"
+              },
+              "amount": {
+                "N": "241"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T08:00:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T07:50:00Z#0193a149"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Amazon.se"
+              },
+              "amount": {
+                "N": "290"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T07:50:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T07:40:00Z#0193a150"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Uber"
+              },
+              "amount": {
+                "N": "1337"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T07:40:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T07:30:00Z#0193a151"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "ICA"
+              },
+              "amount": {
+                "N": "575"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T07:30:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T07:20:00Z#0193a152"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Shell"
+              },
+              "amount": {
+                "N": "1985"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T07:20:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T07:10:00Z#0193a153"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "H&M"
+              },
+              "amount": {
+                "N": "1276"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T07:10:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T07:00:00Z#0193a154"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Telia"
+              },
+              "amount": {
+                "N": "1343"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T07:00:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T06:50:00Z#0193a155"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Spotify"
+              },
+              "amount": {
+                "N": "888"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T06:50:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T06:40:00Z#0193a156"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Starbucks"
+              },
+              "amount": {
+                "N": "103"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T06:40:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T06:30:00Z#0193a157"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Amazon.se"
+              },
+              "amount": {
+                "N": "140"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T06:30:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T06:20:00Z#0193a158"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Uber"
+              },
+              "amount": {
+                "N": "1979"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T06:20:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T06:10:00Z#0193a159"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "ICA"
+              },
+              "amount": {
+                "N": "1700"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T06:10:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T06:00:00Z#0193a160"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Shell"
+              },
+              "amount": {
+                "N": "1302"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T06:00:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T05:50:00Z#0193a161"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "H&M"
+              },
+              "amount": {
+                "N": "2027"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T05:50:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T05:40:00Z#0193a162"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Telia"
+              },
+              "amount": {
+                "N": "1597"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T05:40:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T05:30:00Z#0193a163"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Spotify"
+              },
+              "amount": {
+                "N": "1194"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T05:30:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T05:20:00Z#0193a164"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Starbucks"
+              },
+              "amount": {
+                "N": "224"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T05:20:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T05:10:00Z#0193a165"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Amazon.se"
+              },
+              "amount": {
+                "N": "1283"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T05:10:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T05:00:00Z#0193a166"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Uber"
+              },
+              "amount": {
+                "N": "962"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T05:00:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T04:50:00Z#0193a167"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "ICA"
+              },
+              "amount": {
+                "N": "406"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T04:50:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T04:40:00Z#0193a168"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Shell"
+              },
+              "amount": {
+                "N": "220"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T04:40:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T04:30:00Z#0193a169"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "H&M"
+              },
+              "amount": {
+                "N": "1838"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T04:30:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T04:20:00Z#0193a170"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Telia"
+              },
+              "amount": {
+                "N": "1450"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T04:20:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T04:10:00Z#0193a171"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Spotify"
+              },
+              "amount": {
+                "N": "1306"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T04:10:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T04:00:00Z#0193a172"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Starbucks"
+              },
+              "amount": {
+                "N": "1383"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T04:00:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T03:50:00Z#0193a173"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Amazon.se"
+              },
+              "amount": {
+                "N": "1102"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T03:50:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T03:40:00Z#0193a174"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Uber"
+              },
+              "amount": {
+                "N": "1161"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T03:40:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T03:30:00Z#0193a175"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "ICA"
+              },
+              "amount": {
+                "N": "67"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T03:30:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T03:20:00Z#0193a176"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Shell"
+              },
+              "amount": {
+                "N": "588"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T03:20:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T03:10:00Z#0193a177"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "H&M"
+              },
+              "amount": {
+                "N": "1978"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T03:10:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T03:00:00Z#0193a178"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Telia"
+              },
+              "amount": {
+                "N": "1747"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T03:00:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T02:50:00Z#0193a179"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Spotify"
+              },
+              "amount": {
+                "N": "878"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T02:50:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T02:40:00Z#0193a180"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Starbucks"
+              },
+              "amount": {
+                "N": "664"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T02:40:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T02:30:00Z#0193a181"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Amazon.se"
+              },
+              "amount": {
+                "N": "70"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T02:30:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T02:20:00Z#0193a182"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Uber"
+              },
+              "amount": {
+                "N": "1327"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T02:20:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T02:10:00Z#0193a183"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "ICA"
+              },
+              "amount": {
+                "N": "824"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T02:10:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T02:00:00Z#0193a184"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Shell"
+              },
+              "amount": {
+                "N": "1277"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T02:00:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T01:50:00Z#0193a185"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "H&M"
+              },
+              "amount": {
+                "N": "713"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T01:50:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T01:40:00Z#0193a186"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Telia"
+              },
+              "amount": {
+                "N": "1683"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T01:40:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T01:30:00Z#0193a187"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Spotify"
+              },
+              "amount": {
+                "N": "1815"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T01:30:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T01:20:00Z#0193a188"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Starbucks"
+              },
+              "amount": {
+                "N": "493"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T01:20:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T01:10:00Z#0193a189"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Amazon.se"
+              },
+              "amount": {
+                "N": "744"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T01:10:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T01:00:00Z#0193a190"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Uber"
+              },
+              "amount": {
+                "N": "548"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T01:00:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T00:50:00Z#0193a191"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "ICA"
+              },
+              "amount": {
+                "N": "1792"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T00:50:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T00:40:00Z#0193a192"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Shell"
+              },
+              "amount": {
+                "N": "1764"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T00:40:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T00:30:00Z#0193a193"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "H&M"
+              },
+              "amount": {
+                "N": "330"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T00:30:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T00:20:00Z#0193a194"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Telia"
+              },
+              "amount": {
+                "N": "1179"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T00:20:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T00:10:00Z#0193a195"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Spotify"
+              },
+              "amount": {
+                "N": "1533"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T00:10:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-27T00:00:00Z#0193a196"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Starbucks"
+              },
+              "amount": {
+                "N": "392"
+              },
+              "transactionDate": {
+                "S": "2026-01-27T00:00:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-26T23:50:00Z#0193a197"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Amazon.se"
+              },
+              "amount": {
+                "N": "1905"
+              },
+              "transactionDate": {
+                "S": "2026-01-26T23:50:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-26T23:40:00Z#0193a198"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "Uber"
+              },
+              "amount": {
+                "N": "282"
+              },
+              "transactionDate": {
+                "S": "2026-01-26T23:40:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "TX#2026-01-26T23:30:00Z#0193a199"
+              },
+              "currency": {
+                "S": "SEK"
+              },
+              "merchantName": {
+                "S": "ICA"
+              },
+              "amount": {
+                "N": "706"
+              },
+              "transactionDate": {
+                "S": "2026-01-26T23:30:00Z"
+              },
+              "category": {
+                "S": "Finance"
+              }
+            }
+          ],
+          "NonKeyAttributes": [
+            "currency",
+            "merchantName",
+            "amount",
+            "transactionDate",
+            "category"
+          ],
+          "DataAccess": {
+            "MySql": {}
+          }
+        },
+        {
+          "FacetName": "Invoice",
+          "KeyAttributeAlias": {
+            "PartitionKeyAlias": "COMPANY#",
+            "SortKeyAlias": "INVOICE#"
+          },
+          "TableData": [
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b201"
+              },
+              "dueDate": {
+                "S": "2025-09-02"
+              },
+              "amountDue": {
+                "N": "2651"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b202"
+              },
+              "dueDate": {
+                "S": "2025-09-05"
+              },
+              "amountDue": {
+                "N": "4385"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b203"
+              },
+              "dueDate": {
+                "S": "2025-09-08"
+              },
+              "amountDue": {
+                "N": "1945"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b204"
+              },
+              "dueDate": {
+                "S": "2025-09-11"
+              },
+              "amountDue": {
+                "N": "1202"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b205"
+              },
+              "dueDate": {
+                "S": "2025-09-14"
+              },
+              "amountDue": {
+                "N": "2091"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b206"
+              },
+              "dueDate": {
+                "S": "2025-09-17"
+              },
+              "amountDue": {
+                "N": "3412"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b207"
+              },
+              "dueDate": {
+                "S": "2025-09-20"
+              },
+              "amountDue": {
+                "N": "766"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b208"
+              },
+              "dueDate": {
+                "S": "2025-09-23"
+              },
+              "amountDue": {
+                "N": "1587"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b209"
+              },
+              "dueDate": {
+                "S": "2025-09-26"
+              },
+              "amountDue": {
+                "N": "2786"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b210"
+              },
+              "dueDate": {
+                "S": "2025-09-29"
+              },
+              "amountDue": {
+                "N": "1294"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b211"
+              },
+              "dueDate": {
+                "S": "2025-10-02"
+              },
+              "amountDue": {
+                "N": "3456"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b212"
+              },
+              "dueDate": {
+                "S": "2025-10-05"
+              },
+              "amountDue": {
+                "N": "2940"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b213"
+              },
+              "dueDate": {
+                "S": "2025-10-08"
+              },
+              "amountDue": {
+                "N": "3718"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b214"
+              },
+              "dueDate": {
+                "S": "2025-10-11"
+              },
+              "amountDue": {
+                "N": "1859"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b215"
+              },
+              "dueDate": {
+                "S": "2025-10-14"
+              },
+              "amountDue": {
+                "N": "1744"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b216"
+              },
+              "dueDate": {
+                "S": "2025-10-17"
+              },
+              "amountDue": {
+                "N": "5023"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b217"
+              },
+              "dueDate": {
+                "S": "2025-10-20"
+              },
+              "amountDue": {
+                "N": "5193"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b218"
+              },
+              "dueDate": {
+                "S": "2025-10-23"
+              },
+              "amountDue": {
+                "N": "2928"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b219"
+              },
+              "dueDate": {
+                "S": "2025-10-26"
+              },
+              "amountDue": {
+                "N": "1628"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b220"
+              },
+              "dueDate": {
+                "S": "2025-10-29"
+              },
+              "amountDue": {
+                "N": "2626"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b221"
+              },
+              "dueDate": {
+                "S": "2025-11-01"
+              },
+              "amountDue": {
+                "N": "4609"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b222"
+              },
+              "dueDate": {
+                "S": "2025-11-04"
+              },
+              "amountDue": {
+                "N": "2347"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b223"
+              },
+              "dueDate": {
+                "S": "2025-11-07"
+              },
+              "amountDue": {
+                "N": "682"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b224"
+              },
+              "dueDate": {
+                "S": "2025-11-10"
+              },
+              "amountDue": {
+                "N": "3964"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b225"
+              },
+              "dueDate": {
+                "S": "2025-11-13"
+              },
+              "amountDue": {
+                "N": "1513"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b226"
+              },
+              "dueDate": {
+                "S": "2025-11-16"
+              },
+              "amountDue": {
+                "N": "2283"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b227"
+              },
+              "dueDate": {
+                "S": "2025-11-19"
+              },
+              "amountDue": {
+                "N": "5029"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b228"
+              },
+              "dueDate": {
+                "S": "2025-11-22"
+              },
+              "amountDue": {
+                "N": "612"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b229"
+              },
+              "dueDate": {
+                "S": "2025-11-25"
+              },
+              "amountDue": {
+                "N": "4216"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b230"
+              },
+              "dueDate": {
+                "S": "2025-11-28"
+              },
+              "amountDue": {
+                "N": "3152"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b231"
+              },
+              "dueDate": {
+                "S": "2025-12-01"
+              },
+              "amountDue": {
+                "N": "863"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b232"
+              },
+              "dueDate": {
+                "S": "2025-12-04"
+              },
+              "amountDue": {
+                "N": "3371"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b233"
+              },
+              "dueDate": {
+                "S": "2025-12-07"
+              },
+              "amountDue": {
+                "N": "4636"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b234"
+              },
+              "dueDate": {
+                "S": "2025-12-10"
+              },
+              "amountDue": {
+                "N": "3637"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b235"
+              },
+              "dueDate": {
+                "S": "2025-12-13"
+              },
+              "amountDue": {
+                "N": "1052"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b236"
+              },
+              "dueDate": {
+                "S": "2025-12-16"
+              },
+              "amountDue": {
+                "N": "4739"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b237"
+              },
+              "dueDate": {
+                "S": "2025-12-19"
+              },
+              "amountDue": {
+                "N": "3252"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b238"
+              },
+              "dueDate": {
+                "S": "2025-12-22"
+              },
+              "amountDue": {
+                "N": "4781"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b239"
+              },
+              "dueDate": {
+                "S": "2025-12-25"
+              },
+              "amountDue": {
+                "N": "3091"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b240"
+              },
+              "dueDate": {
+                "S": "2025-12-28"
+              },
+              "amountDue": {
+                "N": "3550"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b241"
+              },
+              "dueDate": {
+                "S": "2025-12-31"
+              },
+              "amountDue": {
+                "N": "2967"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b242"
+              },
+              "dueDate": {
+                "S": "2026-01-03"
+              },
+              "amountDue": {
+                "N": "4535"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b243"
+              },
+              "dueDate": {
+                "S": "2026-01-06"
+              },
+              "amountDue": {
+                "N": "1751"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b244"
+              },
+              "dueDate": {
+                "S": "2026-01-09"
+              },
+              "amountDue": {
+                "N": "5132"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b245"
+              },
+              "dueDate": {
+                "S": "2026-01-12"
+              },
+              "amountDue": {
+                "N": "4782"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b246"
+              },
+              "dueDate": {
+                "S": "2026-01-15"
+              },
+              "amountDue": {
+                "N": "4260"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b247"
+              },
+              "dueDate": {
+                "S": "2026-01-18"
+              },
+              "amountDue": {
+                "N": "2751"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b248"
+              },
+              "dueDate": {
+                "S": "2026-01-21"
+              },
+              "amountDue": {
+                "N": "759"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b249"
+              },
+              "dueDate": {
+                "S": "2026-01-24"
+              },
+              "amountDue": {
+                "N": "4912"
+              },
+              "isPaid": {
+                "BOOL": true
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b250"
+              },
+              "dueDate": {
+                "S": "2026-01-27"
+              },
+              "amountDue": {
+                "N": "4104"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b251"
+              },
+              "dueDate": {
+                "S": "2026-01-30"
+              },
+              "amountDue": {
+                "N": "2005"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b252"
+              },
+              "dueDate": {
+                "S": "2026-02-02"
+              },
+              "amountDue": {
+                "N": "3617"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b253"
+              },
+              "dueDate": {
+                "S": "2026-02-05"
+              },
+              "amountDue": {
+                "N": "1749"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b254"
+              },
+              "dueDate": {
+                "S": "2026-02-08"
+              },
+              "amountDue": {
+                "N": "1569"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b255"
+              },
+              "dueDate": {
+                "S": "2026-02-11"
+              },
+              "amountDue": {
+                "N": "5479"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b256"
+              },
+              "dueDate": {
+                "S": "2026-02-14"
+              },
+              "amountDue": {
+                "N": "2638"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b257"
+              },
+              "dueDate": {
+                "S": "2026-02-17"
+              },
+              "amountDue": {
+                "N": "2776"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b258"
+              },
+              "dueDate": {
+                "S": "2026-02-20"
+              },
+              "amountDue": {
+                "N": "1438"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b259"
+              },
+              "dueDate": {
+                "S": "2026-02-23"
+              },
+              "amountDue": {
+                "N": "2827"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b260"
+              },
+              "dueDate": {
+                "S": "2026-02-26"
+              },
+              "amountDue": {
+                "N": "2101"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b261"
+              },
+              "dueDate": {
+                "S": "2026-03-01"
+              },
+              "amountDue": {
+                "N": "2754"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b262"
+              },
+              "dueDate": {
+                "S": "2026-03-04"
+              },
+              "amountDue": {
+                "N": "3675"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b263"
+              },
+              "dueDate": {
+                "S": "2026-03-07"
+              },
+              "amountDue": {
+                "N": "4474"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b264"
+              },
+              "dueDate": {
+                "S": "2026-03-10"
+              },
+              "amountDue": {
+                "N": "3018"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b265"
+              },
+              "dueDate": {
+                "S": "2026-03-13"
+              },
+              "amountDue": {
+                "N": "3514"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b266"
+              },
+              "dueDate": {
+                "S": "2026-03-16"
+              },
+              "amountDue": {
+                "N": "5165"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b267"
+              },
+              "dueDate": {
+                "S": "2026-03-19"
+              },
+              "amountDue": {
+                "N": "1202"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b268"
+              },
+              "dueDate": {
+                "S": "2026-03-22"
+              },
+              "amountDue": {
+                "N": "4446"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b269"
+              },
+              "dueDate": {
+                "S": "2026-03-25"
+              },
+              "amountDue": {
+                "N": "4288"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b270"
+              },
+              "dueDate": {
+                "S": "2026-03-28"
+              },
+              "amountDue": {
+                "N": "2940"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b271"
+              },
+              "dueDate": {
+                "S": "2026-03-31"
+              },
+              "amountDue": {
+                "N": "2843"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b272"
+              },
+              "dueDate": {
+                "S": "2026-04-03"
+              },
+              "amountDue": {
+                "N": "1622"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b273"
+              },
+              "dueDate": {
+                "S": "2026-04-06"
+              },
+              "amountDue": {
+                "N": "1939"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b274"
+              },
+              "dueDate": {
+                "S": "2026-04-09"
+              },
+              "amountDue": {
+                "N": "1702"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b275"
+              },
+              "dueDate": {
+                "S": "2026-04-12"
+              },
+              "amountDue": {
+                "N": "3728"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b276"
+              },
+              "dueDate": {
+                "S": "2026-04-15"
+              },
+              "amountDue": {
+                "N": "3493"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b277"
+              },
+              "dueDate": {
+                "S": "2026-04-18"
+              },
+              "amountDue": {
+                "N": "3338"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b278"
+              },
+              "dueDate": {
+                "S": "2026-04-21"
+              },
+              "amountDue": {
+                "N": "5100"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b279"
+              },
+              "dueDate": {
+                "S": "2026-04-24"
+              },
+              "amountDue": {
+                "N": "942"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b280"
+              },
+              "dueDate": {
+                "S": "2026-04-27"
+              },
+              "amountDue": {
+                "N": "1204"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b281"
+              },
+              "dueDate": {
+                "S": "2026-04-30"
+              },
+              "amountDue": {
+                "N": "3537"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b282"
+              },
+              "dueDate": {
+                "S": "2026-05-03"
+              },
+              "amountDue": {
+                "N": "3526"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b283"
+              },
+              "dueDate": {
+                "S": "2026-05-06"
+              },
+              "amountDue": {
+                "N": "3999"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b284"
+              },
+              "dueDate": {
+                "S": "2026-05-09"
+              },
+              "amountDue": {
+                "N": "3542"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b285"
+              },
+              "dueDate": {
+                "S": "2026-05-12"
+              },
+              "amountDue": {
+                "N": "2196"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b286"
+              },
+              "dueDate": {
+                "S": "2026-05-15"
+              },
+              "amountDue": {
+                "N": "4837"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b287"
+              },
+              "dueDate": {
+                "S": "2026-05-18"
+              },
+              "amountDue": {
+                "N": "1496"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b288"
+              },
+              "dueDate": {
+                "S": "2026-05-21"
+              },
+              "amountDue": {
+                "N": "5328"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b289"
+              },
+              "dueDate": {
+                "S": "2026-05-24"
+              },
+              "amountDue": {
+                "N": "828"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b290"
+              },
+              "dueDate": {
+                "S": "2026-05-27"
+              },
+              "amountDue": {
+                "N": "2867"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b291"
+              },
+              "dueDate": {
+                "S": "2026-05-30"
+              },
+              "amountDue": {
+                "N": "1282"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b292"
+              },
+              "dueDate": {
+                "S": "2026-06-02"
+              },
+              "amountDue": {
+                "N": "4356"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b293"
+              },
+              "dueDate": {
+                "S": "2026-06-05"
+              },
+              "amountDue": {
+                "N": "2632"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b294"
+              },
+              "dueDate": {
+                "S": "2026-06-08"
+              },
+              "amountDue": {
+                "N": "2015"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b295"
+              },
+              "dueDate": {
+                "S": "2026-06-11"
+              },
+              "amountDue": {
+                "N": "1966"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b296"
+              },
+              "dueDate": {
+                "S": "2026-06-14"
+              },
+              "amountDue": {
+                "N": "2361"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b297"
+              },
+              "dueDate": {
+                "S": "2026-06-17"
+              },
+              "amountDue": {
+                "N": "1866"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b298"
+              },
+              "dueDate": {
+                "S": "2026-06-20"
+              },
+              "amountDue": {
+                "N": "4088"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b299"
+              },
+              "dueDate": {
+                "S": "2026-06-23"
+              },
+              "amountDue": {
+                "N": "2434"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            },
+            {
+              "PK": {
+                "S": "COMPANY#019bffec-3afb-7b63-8461-a89366547b11"
+              },
+              "SK": {
+                "S": "INVOICE#0193b300"
+              },
+              "dueDate": {
+                "S": "2026-06-26"
+              },
+              "amountDue": {
+                "N": "2990"
+              },
+              "isPaid": {
+                "BOOL": false
+              }
+            }
+          ],
+          "NonKeyAttributes": [
+            "dueDate",
+            "amountDue",
+            "isPaid"
+          ],
+          "DataAccess": {
+            "MySql": {}
+          }
+        }
+      ],
+      "DataAccess": {
+        "MySql": {}
+      },
+      "SampleDataFormats": {
+        "COMPANY#019bffec-3afb-7b63-8461-a89366547b67": [
+          "identifiers",
+          "UUID"
+        ],
+        "PK": [
+          "dataTypes",
+          "String"
+        ],
+        "SK": [
+          "dataTypes",
+          "String"
+        ],
+        "companyName": [
+          "dataTypes",
+          "String"
+        ],
+        "creditLimit": [
+          "Float"
+        ],
+        "remainingSpend": [
+          "Float"
+        ],
+        "merchantName": [
+          "dataTypes",
+          "String"
+        ],
+        "status": [
+          "dataTypes",
+          "String"
+        ],
+        "currency": [
+          "dataTypes",
+          "String"
+        ],
+        "amount": [
+          "Float"
+        ],
+        "transactionDate": [
+          "date",
+          "ISO 8601 date and time"
+        ],
+        "dueDate": [
+          "date",
+          "ISO 8601 date and time"
+        ],
+        "amountDue": [
+          "Float"
+        ],
+        "category": [
+          "dataTypes",
+          "String"
+        ]
+      },
+      "BillingMode": "PAY_PER_REQUEST"
+    }
+  ]
+}

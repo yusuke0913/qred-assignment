@@ -1,0 +1,9 @@
+{
+  "name": "get-dashboard",
+  "version": "1.0.0",
+  "main": "getDashboard.mjs",
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

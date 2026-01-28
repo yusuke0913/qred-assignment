@@ -1,0 +1,104 @@
+openapi: 3.0.0
+info:
+  title: Qred Business Dashboard API
+  description: |
+    Integrated API for fetching company details, latest transactions, and invoice statuses.
+    Optimized for DynamoDB Single Table Design to minimize round-trips.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:3000
+    description: Local development server (AWS SAM / Serverless Offline)
+
+paths:
+  /companies/{companyId}/dashboard:
+    get:
+      summary: Get Dashboard Data
+      description: |
+        Returns a consolidated response containing:
+        1. Company basic information (Metadata)
+        2. Latest 5 transaction records
+        3. Summary of outstanding/overdue invoices
+      parameters:
+        - name: companyId
+          in: path
+          required: true
+          description: Unique identifier for the company (UUID v7 format)
+          schema:
+            type: string
+            example: "019bffec-3afb-7b63-8461-a89366547b11"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DashboardResponse'
+        '404':
+          description: Company not found
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    DashboardResponse:
+      type: object
+      properties:
+        company:
+          $ref: '#/components/schemas/CompanyInfo'
+        recentTransactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/RecentTransactions'
+          maxItems: 5
+        invoiceSummary:
+          $ref: '#/components/schemas/InvoiceSummary'
+
+    CompanyInfo:
+      type: object
+      properties:
+        companyName: { type: string, example: "Company AB" }
+        creditLimit: { type: number, example: 100000 }
+        remainingSpend: { type: number, example: 85000 }
+        currency: { type: string, example: "SEK" }
+
+    Transaction:
+      type: object
+      properties:
+        id: { type: string, example: "TX#2026-01-27T16:00:00Z#uuid" }
+        merchantName: { type: string, example: "Starbucks" }
+        amount: { type: number, example: 55.50 }
+        transactionDate: { type: string, format: date-time }
+        category: { type: string, example: "Finance" }
+
+    RecentTransactions:
+      type: object
+      description: Transactions from the last 30 days with a summary count.
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Transaction'
+          maxItems: 5
+        totalCount:
+          type: integer
+          description: Total number of transactions in the last 30 days.
+          example: 57
+        additionalItemsCount:
+          type: integer
+          description: Count of transactions not included in the 'items' array.
+          example: 54
+
+    InvoiceSummary:
+      type: object
+      properties:
+        hasOverdueInvoice:
+          type: boolean
+          example: true
+        nextPaymentDueDate:
+          type: string
+          format: date
+          example: "2026-02-10"
+        totalOutstandingAmount:
+          type: number
+          example: 12500.00

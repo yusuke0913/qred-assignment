@@ -1,0 +1,40 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: >-
+  qred-assignment
+Transform:
+- AWS::Serverless-2016-10-31
+
+Resources:
+  getDashboardFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/handlers/dashboard
+      Handler: getDashboard.handler
+      Runtime: nodejs24.x
+      Architectures:
+      - arm64
+      MemorySize: 128
+      Timeout: 100
+      Description: Returns dashboard data for a company including transactions and invoices.
+      Policies:
+      - DynamoDBCrudPolicy:
+          TableName: QredMain
+      Environment:
+        Variables:
+          TABLE_NAME: QredMain
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /companies/{id}/dashboard
+            Method: GET
+
+Outputs:
+  WebEndpoint:
+    Description: API Gateway endpoint URL for Prod stage
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.${AWS::URLSuffix}/Prod/"
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    LoggingConfig:
+      LogFormat: JSON
