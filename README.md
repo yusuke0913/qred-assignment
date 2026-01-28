@@ -129,6 +129,18 @@ npm test
 - Handler tests: Error handling, response payload structure
 - Repository tests: DynamoDB command verification
 
+### Mock Server (API Only)
+
+For quick API testing without waiting for backend implementation, use Prism to mock the OpenAPI specification:
+
+```bash
+  npx @stoplight/prism-cli mock docs/apiSpecification/openapi.yaml                                                                                                     
+                                                                                                                                                                       
+  # Test with dynamic response generation:                                                                                                                               
+  curl http://127.0.0.1:4010/companies/123/dashboard -H "Prefer: dynamic=true"                                                                                         
+```
+This enables frontend and backend teams to develop in parallel.  
+             
 ## Future Improvements
 
 - **Authentication**: Retrieve companyId from access token instead of path parameter
