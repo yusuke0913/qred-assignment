@@ -31,6 +31,8 @@ sam local start-api --env-vars env.json
 curl http://localhost:3000/companies/019bffec-3afb-7b63-8461-a89366547b11/dashboard
 ```
 
+Alternatively, you can import `docs/apiSpecification/openapi.yaml` into Postman to test the API with a pre-configured collection.
+
 ## Database Schema
 
 ### Single Table Design
@@ -47,7 +49,7 @@ Using DynamoDB Single Table Design to minimize read operations and optimize for 
 
 1. **Get company info** → Query PK=`COMPANY#<id>`, SK=`METADATA`
 2. **Get recent transactions** → Query PK=`COMPANY#<id>`, SK begins_with `TX#`, ScanIndexForward=false
-3. **Get unpaid invoices** → Query PK=`COMPANY#<id>`, SK begins_with `INVOICE#`, filter isPaid=false
+3. **Get unpaid invoices** → Query PK=`COMPANY#<id>`, SK begins_with `INVOICE#`, ScanIndexForward=false
 
 Data model file: `docs/databaseSchema/workbench-data-model.json`
 
